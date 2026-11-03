@@ -1,0 +1,7 @@
+{
+  "name":"study-journal-cloudflare",
+  "version":"1.0.0",
+  "private":true,
+  "scripts":{"dev":"vite","build":"vite build","deploy":"wrangler deploy"},
+  "devDependencies":{"vite":"^6.0.5","wrangler":"^3.99.0"}
+}
