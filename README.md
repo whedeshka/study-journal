@@ -1,30 +1,37 @@
-# Учебный журнал — Cloudflare Workers + D1 + R2
+# Учебный журнал — GitHub Pages + Supabase
 
-Приложение использует D1 для расписания и домашних заданий, а R2 — для файлов. Это позволяет принимать вложения размером **до 30 МБ на файл** без ограничения D1 в 2 МБ на строку.
+## Архитектура
+- GitHub Pages: постоянная ссылка и статический интерфейс.
+- Supabase Database: расписание, задания и метаданные файлов.
+- Supabase Storage: bucket `homework-files`, приватный, максимум 50 МБ на файл.
+- Supabase Auth: вход старосты по email и паролю.
 
-## 1. Создать D1
-В Cloudflare Dashboard откройте **Storage & databases → D1 SQL Database → Create database**. Имя: `study-journal-db`. Скопируйте Database ID и замените `REPLACE_WITH_D1_DATABASE_ID` в `wrangler.jsonc`. Откройте D1 → Console и выполните весь SQL из `migrations/0001_init.sql`.
+Cloudflare Worker, D1 и R2 для этой версии не нужны.
 
-## 2. Создать R2 bucket
-В Cloudflare Dashboard откройте **Storage & databases → R2 → Overview** и создайте bucket с именем `study-journal-files`. Имя должно совпадать с `bucket_name` в `wrangler.jsonc`. При первом подключении R2 Cloudflare может попросить пройти checkout и добавить платёжный метод/подписку. У R2 есть бесплатная месячная квота: 10 GB-month хранения, 1 млн операций Class A и 10 млн Class B; исходящий трафик бесплатный. Если выйти за бесплатные квоты, возможна оплата. Проверяйте актуальные условия в официальном прайсинге: https://developers.cloudflare.com/r2/pricing/
+## 1. Настроить Supabase
+Проект: `study-journal-files`. В Storage уже должен существовать приватный bucket `homework-files` с лимитом 50 MB.
+В SQL Editor выполните весь файл `supabase/migrations/0001_init.sql`.
 
-## 3. Пароль старосты
-Установите Wrangler локально и выполните из папки проекта:
-```bash
-npm install
-npx wrangler secret put ADMIN_PASSWORD
-npx wrangler secret put SESSION_SECRET
+В Settings → API Keys скопируйте Publishable key (или legacy anon key). В файле `public/config.js` замените `PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE` на этот ключ. Это публичный ключ; Secret/service_role key НИКОГДА не помещайте в GitHub или браузер.
+
+## 2. Создать учётную запись старосты
+В Supabase → Authentication → Users → Add user создайте пользователя с email и паролем старосты.
+Скопируйте его User UID. В SQL Editor выполните:
+```sql
+insert into public.admin_users(user_id) values ('ВСТАВЬТЕ-USER-UID');
 ```
-Для `ADMIN_PASSWORD` введите длинный пароль старосты. Для `SESSION_SECRET` введите отдельную длинную случайную строку. Не помещайте эти значения в GitHub. Для локального теста скопируйте `.dev.vars.example` в `.dev.vars` и заполните значения.
+После этого только этот пользователь сможет изменять расписание, задания и файлы. Студенты входят не будут.
 
-## 4. Публикация через Cloudflare
-Для Git-интеграции Worker: Build command `npm run build`, Deploy command `npx wrangler deploy`, Root directory `/`. Убедитесь, что `wrangler.jsonc` содержит правильный D1 Database ID, D1 уже создана и R2 bucket создан. Worker должен иметь bindings `DB` и `FILES`.
+## 3. GitHub Pages
+В GitHub откройте Settings → Pages. В Build and deployment выберите Deploy from a branch, branch `main`, folder `/public`, затем Save.
+Сайт будет доступен по адресу https://whedeshka.github.io/study-journal/ .
+Если GitHub Pages не предлагает папку /public, используйте GitHub Actions workflow; тогда публикуйте содержимое папки public как artifact.
 
-## 5. Что уже внесено
-- Расписание с фотографии на 2 недели, понедельник–суббота.
-- Панель старосты с паролем, управление расписанием и заданиями.
-- Вложения до 30 МБ на файл хранятся в R2; в D1 хранятся только метаданные.
-- При удалении задания его файлы удаляются из R2.
+## 4. Доступ к файлам
+Bucket остаётся Private. SQL-политика разрешает анонимное чтение объектов только из bucket homework-files; запись и удаление разрешены только пользователям, внесённым в admin_users. Поэтому студенты могут скачивать файлы без аккаунта, а управлять ими может староста.
 
-## 6. Тарифы и ограничения
-D1 и Workers имеют бесплатные квоты, но не являются безлимитными. R2 предоставляет включённые бесплатные месячные квоты, однако для активации R2 Cloudflare может потребовать checkout/платёжный метод. Превышение бесплатных квот может привести к оплате. Сверяйте лимиты перед использованием: https://developers.cloudflare.com/r2/pricing/ и https://developers.cloudflare.com/d1/platform/limits/
+## 5. Ограничение и срок хранения
+Интерфейс и bucket ограничивают файл 50 MiB (52,428,800 байт). В задаче есть lesson_date и expires_at. Срок удаления планируется через 24 часа после окончания пары. Для удаления самих объектов Storage вместе с записями БД нужно включить запланированную Edge Function cleanup; до её настройки автоматическая очистка файлов не активна. Не включайте очистку только SQL-удалением строк — это оставит файлы в Storage.
+
+## 6. Важно
+Не публикуйте пароль старосты, database password или Supabase Secret/service_role key. В GitHub допустим только publishable/anon key.
