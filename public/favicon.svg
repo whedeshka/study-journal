@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="13" fill="#292b50"/><path d="M32 51C25 44 15 42 7 44V15c10-2 19 1 25 8 6-7 15-10 25-8v29c-8-2-18 0-25 7Z" fill="#fff"/><path d="M32 23v28M12 21c7-1 13 1 17 5M52 21c-7-1-13 1-17 5" fill="none" stroke="#aaa4ff" stroke-width="2" stroke-linecap="round"/><path d="M32 10v17m-6-11h12" fill="none" stroke="#6259cb" stroke-width="4" stroke-linecap="round"/><path d="M32 28c-8 2-7 8 0 10s8 8 0 10" fill="none" stroke="#6259cb" stroke-width="2.7" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="12" fill="#21004f"/>
+<path d="M32 56C23 48 12 46 4 49V25c10-3 20 0 28 8 8-8 18-11 28-8v24c-8-3-19-1-28 7Z" fill="#fff"/>
+<path d="M32 33v22M9 31c8-2 15 1 20 6M55 31c-8-2-15 1-20 6" fill="none" stroke="#b8a2ff" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M32 4v14M25 11h14" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<path d="M32 20v13c-11 0-12 7-2 10 10 3 10 9 2 12" fill="none" stroke="#6250c8" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M32 33v19" stroke="#6250c8" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
