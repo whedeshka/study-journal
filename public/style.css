@@ -41,3 +41,16 @@ nav button.active{color:#5b51c3;border-bottom:2px solid #756bd8}
 .calendar-controls{display:flex;align-items:center;gap:12px}.calendar-controls strong{text-transform:capitalize;min-width:140px;text-align:center}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin:10px 0}.calendar-weekdays b{text-align:center;color:#85869a;font-size:12px;padding:8px}.calendar-cell{min-height:76px;background:#fff;border:1px solid #e8e8f0;border-radius:9px;padding:8px;text-align:left;color:#292b50}.calendar-cell.muted-day{background:transparent;border-color:transparent}.calendar-cell.has-deadline{border-color:#8c82e4;background:#f4f2ff}.calendar-cell i{display:block;margin-top:8px;font-size:10px;color:#655acb;font-style:normal;font-weight:bold}.calendar-cell.today{box-shadow:inset 0 0 0 2px #655acb}.material-card a{display:inline-block;text-decoration:none}@media(max-width:600px){.calendar-grid{gap:3px}.calendar-cell{min-height:58px;padding:5px;font-size:11px}.calendar-cell i{font-size:9px}.calendar-controls strong{min-width:110px;font-size:12px}}
 
 #materialForm .material-form-hint{grid-column:1/-1;margin:0 0 12px}.material-link{display:inline-block;text-decoration:none}
+
+/* Larger lesson cards and clearer class text */
+.day{padding:18px;min-height:112px}
+.day>b{font-size:14px}
+.lesson{border-left-width:3px;padding:6px 0 6px 12px;margin-top:14px}
+.lesson small{font-size:12px;margin-bottom:6px}
+.lesson strong{font-size:15px;line-height:1.4}
+.lesson.empty-slot{padding:9px 0 9px 12px}
+.lesson.empty-slot span{font-size:12px}
+@media(max-width:680px){
+ .day{padding:14px;min-height:100px}
+ .lesson strong{font-size:14px}
+}
