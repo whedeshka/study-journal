@@ -20,7 +20,8 @@ $('#calendarContent').innerHTML='<div class="calendar-grid calendar-weekdays">'+
 const upcoming=dueTasks.slice().sort((a,b)=>String(a.due_date).localeCompare(String(b.due_date))).filter(t=>t.due_date>=new Date().toISOString().slice(0,10)).slice(0,8);
 $('#upcomingTasks').innerHTML=upcoming.map(t=>{const l=lessons.find(x=>String(x.id)===String(t.lesson_id));return `<article class="task"><small>${esc(t.due_date)} · ${esc(l?.subject||'Предмет')}</small><h3>${esc(t.title)}</h3><p>${esc(t.description||'')}</p></article>`}).join('')||'<p class="hint">Ближайших дедлайнов нет.</p>';
 $('#materialsContent').innerHTML=materials.map(m=>`<article class="task material-card"><small>${esc(m.subject)}</small><h3>${esc(m.title)}</h3><p>${esc(m.description||'')}</p><a class="file" href="${materialUrls[String(m.id)]||'#'}" target="_blank" rel="noopener">↓ ${esc(m.file_name)}</a></article>`).join('')||'<p class="hint">Материалы пока не добавлены.</p>';
-$('#materialsContent').innerHTML=materials.map(m=>`<div class="manage"><div><b>${esc(m.title)}</b><small>${esc(m.subject)} · ${esc(m.file_name)}</small></div><button type="button" data-delete-material="${m.id}">Удалить</button></div>`).join('')||'<p class="hint">Материалов пока нет.</p>';
+$('#manageMaterials').innerHTML=materials.map(m=>`<div class="manage"><div><b>${esc(m.title)}</b><small>${esc(m.subject)} · ${esc(m.file_name)}</small></div><button type="button" data-delete-material="${m.id}">Удалить</button></div>`).join('')||'<p class="hint">Материалов пока нет.</p>';
+}
 
 function render(){
 renderCalendar();
