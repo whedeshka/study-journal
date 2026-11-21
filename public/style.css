@@ -101,3 +101,27 @@ nav button.active{color:#5b51c3;border-bottom:2px solid #756bd8}
   nav{gap:7px;padding:9px}
   nav button{font-size:12px;padding:9px 6px;min-height:44px}
 }
+
+/* Student help and accordion instructions */
+.help-intro{display:flex;gap:15px;align-items:flex-start;background:linear-gradient(135deg,#292b50,#39356f);color:#fff;border-radius:16px;padding:20px;margin:18px 0 24px}
+.help-intro-icon{flex:0 0 42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#ffffff20;color:#c7bfff;font-size:23px}
+.help-intro h3{margin:1px 0 8px;font-size:17px}
+.help-intro p{margin:0;color:#d8d6ed;line-height:1.6;font-size:13px}
+.help-section{max-width:850px}
+.help-section>h3{font-size:17px;margin:0 0 5px}
+.help-item{background:#fff;border:1px solid #e8e7f2;border-radius:13px;margin:10px 0;overflow:hidden;box-shadow:0 3px 12px rgba(43,39,91,.035)}
+.help-item summary{display:flex;align-items:center;gap:12px;list-style:none;cursor:pointer;padding:15px 17px;font-weight:700;color:#292b50;min-height:58px}
+.help-item summary::-webkit-details-marker{display:none}
+.help-item summary:after{content:"+";margin-left:auto;color:#756bd8;font-size:22px;font-weight:400}
+.help-item[open] summary:after{content:"−"}
+.help-number{display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;border-radius:9px;background:#f0efff;color:#6259cb;font-size:11px}
+.help-body{padding:0 18px 17px 61px;color:#62657b;font-size:13px;line-height:1.65}
+.help-body p{margin:5px 0 10px}
+.help-body ol,.help-body ul{padding-left:19px;margin:7px 0}
+.help-body li{padding:2px 0}
+@media(max-width:680px){
+ .help-intro{padding:16px;gap:11px}
+ .help-intro-icon{width:36px;height:36px;flex-basis:36px}
+ .help-body{padding:0 15px 15px}
+ .help-item summary{padding:13px;gap:9px}
+}
