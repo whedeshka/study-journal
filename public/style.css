@@ -56,3 +56,48 @@ nav button.active{color:#5b51c3;border-bottom:2px solid #756bd8}
 }
 
 #lectureForm .material-form-hint{grid-column:1/-1;margin:0 0 12px}
+
+
+/* Clear, touch-friendly mobile section navigation */
+@media(max-width:680px){
+  nav{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+    padding:12px;
+    margin:0 -1px 4px;
+    border:1px solid #e7e5f7;
+    border-radius:16px;
+    background:linear-gradient(145deg,#fff 0%,#f0efff 100%);
+    box-shadow:0 8px 22px rgba(48,43,100,.07);
+  }
+  nav button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:46px;
+    padding:10px 9px;
+    border:1px solid #e8e6f4;
+    border-radius:11px;
+    background:#fff;
+    color:#656780;
+    font-size:13px;
+    line-height:1.25;
+    text-align:center;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    transition:background .15s ease,border-color .15s ease,transform .15s ease;
+  }
+  nav button:active{transform:scale(.98)}
+  nav button.active{
+    background:#6259cb;
+    border-color:#6259cb;
+    color:#fff;
+    box-shadow:0 4px 12px rgba(98,89,203,.2);
+  }
+  .pane{padding-top:20px}
+}
+@media(max-width:380px){
+  nav{gap:7px;padding:9px}
+  nav button{font-size:12px;padding:9px 6px;min-height:44px}
+}
