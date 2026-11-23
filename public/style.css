@@ -255,3 +255,14 @@ body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
    The subject/date is already shown by .calendar-task-heading. */
 #calendarDeadlines .calendar-task-card h3:not(.calendar-task-heading),
 #calendarDeadlines .calendar-task-card h3{display:none!important}
+
+
+/* Larger, clearer homework description in the schedule tab */
+#tasksContent .task p{
+  margin:12px 0 4px;
+  color:#454963;
+  font-size:18px;
+  line-height:1.6;
+  font-weight:500;
+}
+body.dark-theme #tasksContent .task p{color:#e0e1f2!important}
