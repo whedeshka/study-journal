@@ -249,3 +249,9 @@ body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
 #calendarDeadlines .calendar-task-card > small,
 .calendar-task-card > small:first-child{display:none!important}
 #calendarDeadlines .calendar-task-card .calendar-task-heading{margin-top:0;font-size:21px;font-weight:800;line-height:1.35}
+
+
+/* Legacy deadline cards still contain the old task-title h3; hide it.
+   The subject/date is already shown by .calendar-task-heading. */
+#calendarDeadlines .calendar-task-card h3:not(.calendar-task-heading),
+#calendarDeadlines .calendar-task-card h3{display:none!important}
