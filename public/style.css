@@ -213,3 +213,9 @@ body.dark-theme .lesson-paired .grouped-lesson-times span{background:rgba(160,14
  .day .lesson.empty-slot,.day .lesson.lecture-disabled{height:82px;min-height:82px}
  .day .lesson-selectable.lesson-paired{height:176px;min-height:176px;max-height:176px}
 }
+
+.calendar-task-card .task-links,.calendar-task-files{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.calendar-task-card .task-links b,.calendar-task-files b{font-size:13px;color:var(--text,#25264a)}
+.calendar-task-card .task-links a,.calendar-task-card .calendar-attachment{display:inline-flex;align-items:center;gap:7px;width:fit-content;max-width:100%;padding:8px 12px;border:1px solid var(--border,#dedcf0);border-radius:9px;background:var(--surface-soft,#f6f4ff);color:var(--accent,#6557cf);font-weight:650;text-decoration:none;overflow-wrap:anywhere}
+.calendar-task-card .task-links a:hover,.calendar-task-card .calendar-attachment:hover{filter:brightness(.97);text-decoration:underline}
+body.dark-theme .calendar-task-card .task-links a,body.dark-theme .calendar-task-card .calendar-attachment{background:rgba(160,145,255,.12);border-color:#555071;color:#d2caff}
