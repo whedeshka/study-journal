@@ -273,3 +273,10 @@ body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
   line-height:1.55;
 }
 body.dark-theme #tasksContent > .task > small{color:#c9bdff!important}
+
+
+/* Restore the original timetable lesson-name size */
+.week .lesson strong{
+  font-size:14px!important;
+  line-height:1.4;
+}
