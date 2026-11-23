@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Учебный журнал группы",
+  "short_name": "Учебный журнал",
+  "description": "Расписание, домашние задания, дедлайны и учебные материалы вашей группы.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f7fb",
+  "theme_color": "#292b50",
+  "icons": [
+    {"src":"./app-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
