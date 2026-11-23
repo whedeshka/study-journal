@@ -178,3 +178,12 @@ body.dark-theme .task p,body.dark-theme .calendar-day-panel .task p{color:#d2d3e
 @media(max-width:360px){nav{gap:6px!important;padding:8px!important}nav button,body.dark-theme nav button{font-size:11px!important;min-height:44px;padding:8px 5px!important}}
 
 .task-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #e8e6f2}.task-links>b{flex-basis:100%;font-size:12px;color:#77758e}.task-links a{display:inline-flex;align-items:center;padding:7px 11px;border-radius:9px;background:#efedff;color:#5549b8!important;font-weight:650;text-decoration:none;overflow-wrap:anywhere;max-width:100%}.task-links a:hover{background:#e3dfff;text-decoration:underline}body.dark-theme .task-links{border-color:#484a66}body.dark-theme .task-links>b{color:#c5c4dc}body.dark-theme .task-links a{background:#3b3763;color:#e4dfff!important}
+
+/* Grouped consecutive classes: keep each actual lesson visible inside one homework target */
+.grouped-lesson{display:flex!important;flex-direction:column;align-items:stretch;gap:7px;text-align:left}
+.grouped-lesson-times{display:flex;flex-direction:column;gap:4px}
+.grouped-lesson-times span{display:block;font-size:12px;font-weight:650;line-height:1.35;color:var(--muted,#77758e);background:rgba(112,96,220,.08);border-radius:6px;padding:4px 7px}
+.grouped-lesson-note,.grouped-admin-lesson .grouped-lesson-note{font-size:11px!important;font-weight:650;color:var(--accent,#6557cf)!important}
+.grouped-admin-lesson{display:flex;flex-direction:column;align-items:stretch;gap:6px;text-align:left}
+body.dark-theme .grouped-lesson-times span{color:#d0cdef;background:rgba(160,145,255,.14)}
+body.dark-theme .grouped-lesson-note,body.dark-theme .grouped-admin-lesson .grouped-lesson-note{color:#c2b8ff!important}
