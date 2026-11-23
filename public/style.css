@@ -260,19 +260,11 @@ body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
 
 
 /* Homework cards below the timetable: enlarge the subject/lesson label only */
-#tasksContent > .task > small{
-  display:block;
-  font-size:18px!important;
-  line-height:1.4;
-  font-weight:700;
-  color:#6259cb!important;
-  margin-bottom:8px;
-}
 #tasksContent > .task p{
   font-size:13px!important;
   line-height:1.55;
 }
-body.dark-theme #tasksContent > .task > small{color:#c9bdff!important}
+body.dark-theme 
 
 
 /* Restore the original timetable lesson-name size */
@@ -280,3 +272,7 @@ body.dark-theme #tasksContent > .task > small{color:#c9bdff!important}
   font-size:14px!important;
   line-height:1.4;
 }
+
+/* Homework card headings: clear dark text, not accent purple */
+#tasksContent > .task > small{display:block!important;color:#252943!important;font-size:21px!important;font-weight:750!important;line-height:1.35;margin:0 0 12px!important}
+body.dark-theme #tasksContent > .task > small{color:#f0efff!important}
