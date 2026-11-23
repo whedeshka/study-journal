@@ -188,3 +188,12 @@ body.dark-theme .task p,body.dark-theme .calendar-day-panel .task p{color:#d2d3e
 body.dark-theme .grouped-lesson-times span{color:#d0cdef;background:rgba(160,145,255,.14)}
 body.dark-theme .grouped-lesson-note,body.dark-theme .grouped-admin-lesson .grouped-lesson-note{color:#c2b8ff!important}
 
+
+/* A double class is one card with two visible time rows and the height of two slots */
+.lesson-selectable.lesson-paired{min-height:148px!important;padding:13px 12px!important;display:flex!important;flex-direction:column;justify-content:center;align-items:stretch;gap:12px!important}
+.lesson-paired .grouped-lesson-times{display:flex;flex-direction:column;gap:6px}
+.lesson-paired .grouped-lesson-times span{display:block;padding:6px 9px;border-radius:7px;background:rgba(112,96,220,.10);font-size:12px;font-weight:700;line-height:1.3;color:#69628b}
+.lesson-paired strong{font-size:16px;line-height:1.3}
+.admin-paired{min-height:110px;padding:10px!important;display:flex;flex-direction:column;justify-content:center;gap:7px}
+body.dark-theme .lesson-paired .grouped-lesson-times span{background:rgba(160,145,255,.16);color:#e1dcff}
+@media(max-width:680px){.lesson-selectable.lesson-paired{min-height:140px!important;padding:12px 10px!important;gap:10px!important}.lesson-paired strong{font-size:15px}}
