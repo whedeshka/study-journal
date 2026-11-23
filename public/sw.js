@@ -1,4 +1,4 @@
-const CACHE_NAME='study-journal-shell-v1';
+const CACHE_NAME='study-journal-shell-v2';
 const APP_ROOT=new URL('./',self.location.href);
 const SHELL=[APP_ROOT.href,new URL('index.html',APP_ROOT).href,new URL('style.css',APP_ROOT).href,new URL('app.js',APP_ROOT).href,new URL('config.js',APP_ROOT).href,new URL('manifest.webmanifest',APP_ROOT).href,new URL('app-icon.svg',APP_ROOT).href];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
