@@ -8,9 +8,14 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#f6f7fb",
-  "theme_color": "#292b50",
+  "background_color": "#17122f",
+  "theme_color": "#33236f",
   "icons": [
-    {"src":"./app-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+    {
+      "src": "./app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
   ]
 }
