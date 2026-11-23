@@ -257,12 +257,12 @@ body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
 #calendarDeadlines .calendar-task-card h3{display:none!important}
 
 
-/* Larger, clearer homework description in the schedule tab */
-#tasksContent .task p{
-  margin:12px 0 4px;
-  color:#454963;
-  font-size:18px;
-  line-height:1.6;
-  font-weight:500;
+
+/* Larger lesson names in the timetable; homework descriptions keep their original size */
+.week .lesson strong{
+  font-size:18px!important;
+  line-height:1.4;
 }
-body.dark-theme #tasksContent .task p{color:#e0e1f2!important}
+@media(max-width:680px){
+  .week .lesson strong{font-size:17px!important}
+}
