@@ -197,3 +197,7 @@ body.dark-theme .grouped-lesson-note,body.dark-theme .grouped-admin-lesson .grou
 .admin-paired{min-height:110px;padding:10px!important;display:flex;flex-direction:column;justify-content:center;gap:7px}
 body.dark-theme .lesson-paired .grouped-lesson-times span{background:rgba(160,145,255,.16);color:#e1dcff}
 @media(max-width:680px){.lesson-selectable.lesson-paired{min-height:140px!important;padding:12px 10px!important;gap:10px!important}.lesson-paired strong{font-size:15px}}
+
+/* Empty timetable periods occupy the same footprint as a regular lesson */
+.day .lesson.empty-slot{display:flex;align-items:flex-start;min-height:71px;padding:9px 0 9px 12px!important;margin-top:14px;opacity:.8}
+.day .lesson.empty-slot small{margin-bottom:0}
