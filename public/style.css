@@ -219,3 +219,11 @@ body.dark-theme .lesson-paired .grouped-lesson-times span{background:rgba(160,14
 .calendar-task-card .task-links a,.calendar-task-card .calendar-attachment{display:inline-flex;align-items:center;gap:7px;width:fit-content;max-width:100%;padding:8px 12px;border:1px solid var(--border,#dedcf0);border-radius:9px;background:var(--surface-soft,#f6f4ff);color:var(--accent,#6557cf);font-weight:650;text-decoration:none;overflow-wrap:anywhere}
 .calendar-task-card .task-links a:hover,.calendar-task-card .calendar-attachment:hover{filter:brightness(.97);text-decoration:underline}
 body.dark-theme .calendar-task-card .task-links a,body.dark-theme .calendar-task-card .calendar-attachment{background:rgba(160,145,255,.12);border-color:#555071;color:#d2caff}
+
+/* Compact homework preview inside timetable lesson cards */
+.lesson-homework-preview{display:block!important;margin-top:2px!important;color:var(--accent,#6557cf)!important;font-size:11px!important;font-weight:650;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.lesson-selectable.lesson-paired{gap:7px!important;min-height:158px!important}
+.lesson-paired .grouped-lesson-times{gap:5px!important}
+.lesson-paired .grouped-lesson-times span{padding:5px 8px!important}
+.lesson-paired .lesson-homework-preview{margin-top:0!important}
+body.dark-theme .lesson-homework-preview{color:#c5baff!important}
