@@ -258,11 +258,18 @@ body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
 
 
 
-/* Larger lesson names in the timetable; homework descriptions keep their original size */
-.week .lesson strong{
+
+/* Homework cards below the timetable: enlarge the subject/lesson label only */
+#tasksContent > .task > small{
+  display:block;
   font-size:18px!important;
   line-height:1.4;
+  font-weight:700;
+  color:#6259cb!important;
+  margin-bottom:8px;
 }
-@media(max-width:680px){
-  .week .lesson strong{font-size:17px!important}
+#tasksContent > .task p{
+  font-size:13px!important;
+  line-height:1.55;
 }
+body.dark-theme #tasksContent > .task > small{color:#c9bdff!important}
