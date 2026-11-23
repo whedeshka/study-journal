@@ -188,20 +188,3 @@ body.dark-theme .task p,body.dark-theme .calendar-day-panel .task p{color:#d2d3e
 body.dark-theme .grouped-lesson-times span{color:#d0cdef;background:rgba(160,145,255,.14)}
 body.dark-theme .grouped-lesson-note,body.dark-theme .grouped-admin-lesson .grouped-lesson-note{color:#c2b8ff!important}
 
-/* Compact grouped lesson cards: two periods should read as two, not four */
-.lesson-selectable.grouped-lesson{padding:8px 10px!important;margin-top:10px!important;gap:5px!important;border-radius:9px}
-.grouped-lesson-times{gap:3px!important}
-.grouped-lesson-times span{font-size:11px!important;line-height:1.2!important;padding:3px 7px!important;border-radius:5px!important}
-.grouped-lesson strong{font-size:14px!important;line-height:1.25!important;margin-top:1px}
-.grouped-lesson .grouped-lesson-note{display:none!important}
-.grouped-admin-lesson{padding:8px 10px!important;gap:4px!important}
-.grouped-admin-lesson .grouped-lesson-times span{font-size:11px!important;padding:3px 7px!important}
-
-/* A consecutive pair block is one card occupying the height of two lesson slots */
-.lesson-selectable.grouped-lesson{min-height:156px!important;padding:18px 16px!important;margin-top:14px!important;display:flex!important;flex-direction:column;justify-content:center;align-items:stretch;gap:18px!important;border-radius:12px}
-.grouped-lesson-range{display:block!important;font-size:13px!important;font-weight:700!important;line-height:1.35!important;padding:8px 11px!important;border-radius:7px;background:rgba(112,96,220,.09);color:#706a91!important;margin:0!important}
-.grouped-lesson strong{font-size:17px!important;line-height:1.35!important}
-.grouped-admin-lesson{min-height:110px;padding:13px!important;justify-content:center}
-.grouped-admin-lesson .grouped-lesson-range{font-size:12px!important}
-body.dark-theme .grouped-lesson-range{background:rgba(160,145,255,.16);color:#e0dcff!important}
-@media(max-width:680px){.lesson-selectable.grouped-lesson{min-height:142px!important;padding:15px 13px!important;gap:15px!important}.grouped-lesson strong{font-size:15px!important}}
