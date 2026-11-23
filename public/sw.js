@@ -1,6 +1,6 @@
-const CACHE_NAME='study-journal-shell-v3';
+const CACHE_NAME='study-journal-shell-v5';
 const APP_ROOT=new URL('./',self.location.href);
-const SHELL=[APP_ROOT.href,new URL('index.html',APP_ROOT).href,new URL('style.css',APP_ROOT).href,new URL('app.js',APP_ROOT).href,new URL('config.js',APP_ROOT).href,new URL('manifest.webmanifest',APP_ROOT).href,new URL('app-icon.svg',APP_ROOT).href];
+const SHELL=[APP_ROOT.href,new URL('index.html',APP_ROOT).href,new URL('style.css',APP_ROOT).href,new URL('app.js',APP_ROOT).href,new URL('config.js',APP_ROOT).href,new URL('manifest.webmanifest',APP_ROOT).href,new URL('app-icon.jpg',APP_ROOT).href];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{
