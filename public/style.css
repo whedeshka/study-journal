@@ -238,3 +238,8 @@ body.dark-theme .lesson-homework-preview{color:#c5baff!important}
 .week .lesson-paired .grouped-lesson-times span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:680px){.week .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:420px){.week .grid{grid-template-columns:minmax(0,1fr)!important}}
+
+
+.calendar-task-card .calendar-task-heading{display:block;margin:0 0 12px;font-size:20px;line-height:1.35;font-weight:750;color:var(--accent,#6557cf);overflow-wrap:anywhere}
+body.dark-theme .calendar-task-card .calendar-task-heading{color:#c9bdff}
+@media(max-width:600px){.calendar-task-card .calendar-task-heading{font-size:18px}}
