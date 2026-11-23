@@ -201,3 +201,15 @@ body.dark-theme .lesson-paired .grouped-lesson-times span{background:rgba(160,14
 /* Empty timetable periods occupy the same footprint as a regular lesson */
 .day .lesson.empty-slot{display:flex;align-items:flex-start;min-height:71px;padding:9px 0 9px 12px!important;margin-top:14px;opacity:.8}
 .day .lesson.empty-slot small{margin-bottom:0}
+
+/* Uniform timetable slot geometry: one period has one footprint, a paired period has exactly two */
+.day .lesson{box-sizing:border-box;height:84px;min-height:84px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.day .lesson-selectable{align-items:stretch}
+.day .lesson.empty-slot{height:84px;min-height:84px;display:flex;justify-content:flex-start;padding-top:9px!important}
+.day .lesson.lecture-disabled{height:84px;min-height:84px}
+.day .lesson-selectable.lesson-paired{height:182px;min-height:182px;max-height:182px;justify-content:center;gap:12px!important}
+@media(max-width:680px){
+ .day .lesson{height:82px;min-height:82px}
+ .day .lesson.empty-slot,.day .lesson.lecture-disabled{height:82px;min-height:82px}
+ .day .lesson-selectable.lesson-paired{height:176px;min-height:176px;max-height:176px}
+}
