@@ -276,3 +276,7 @@ body.dark-theme
 /* Homework card headings: clear dark text, not accent purple */
 #tasksContent > .task > small{display:block!important;color:#252943!important;font-size:21px!important;font-weight:750!important;line-height:1.35;margin:0 0 12px!important}
 body.dark-theme #tasksContent > .task > small{color:#f0efff!important}
+
+/* Calendar deadline subject/date heading: black in light theme */
+#calendarDeadlines .calendar-task-card .calendar-task-heading{color:#171717!important}
+body.dark-theme #calendarDeadlines .calendar-task-card .calendar-task-heading{color:#f0efff!important}
